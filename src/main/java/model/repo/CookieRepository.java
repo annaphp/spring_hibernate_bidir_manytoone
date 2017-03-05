@@ -1,4 +1,4 @@
-package repo;
+package model.repo;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,9 +9,21 @@ import org.springframework.transaction.annotation.Transactional;
 
 import model.Cookie;
 
+
+/* Layers:
+ * 
+ * Test 
+ * ===========
+ * Service
+ * -----------
+ * Repository
+ * -----------
+ * Hibernate
+ * -----------
+ * 
+ */
 @Repository
 @Transactional
-@Component
 public class CookieRepository {
 	
 	private SessionFactory sessionFactory;

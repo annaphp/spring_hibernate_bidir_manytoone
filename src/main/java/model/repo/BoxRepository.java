@@ -1,5 +1,11 @@
-package repo;
+package model.repo;
 
+/*
+ *     @Component
+ *       /     \
+ *  @Service  @Repository  
+ *
+ */
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +17,6 @@ import model.Box;
 
 @Repository
 @Transactional
-@Component
 public class BoxRepository {
 	
 	private SessionFactory sessionFactory;

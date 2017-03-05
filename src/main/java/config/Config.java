@@ -14,9 +14,9 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
-@ComponentScan(basePackages={"repo"})
+@ComponentScan(basePackages={"model.repo", "service"})
 @Configuration
-public class PersistenceConfig {
+public class Config {
 	
 	@Bean 
 	public DataSource dataSource() {  
@@ -38,7 +38,7 @@ public class PersistenceConfig {
 		Properties props = new Properties();
 		props.setProperty("dialect", "org.hibernate.dialect.MySQLDialect");
 		props.setProperty("hibernate.hbm2ddl.auto", "create");
-	//	props.setProperty("hibernate.show_sql", "true");
+		props.setProperty("hibernate.show_sql", "true");
 		sfb.setHibernateProperties(props);
 		return sfb;	
 	}
